@@ -1,0 +1,87 @@
+.card {
+  width: fit-content;
+  margin: 0 auto;
+  border: 1px solid #dedede;
+  border-radius: 1.5rem;
+  background-color: #ffffff;
+  padding: 2rem 4rem;
+  box-shadow: 0px 27px 45px 17px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card__title {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  align-items: flex-end;
+}
+.card__title--active {
+  background: -webkit-linear-gradient(blue, purple);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card__title--disabled {
+  color: #ccc;
+}
+.card__title__item {
+  position: relative;
+  display: flex;
+}
+.card__title__item__hover {
+  position: absolute;
+  font-size: 0.8rem;
+  color: #666;
+  border: 2px dashed #ccc;
+  width: 100%;
+  border-top: none;
+  text-align: center;
+  height: 10px;
+  bottom: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in;
+}
+/* show / hide  */
+.card__title__item__hover::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card__title__item__hover--active {
+  opacity: 1;
+  visibility: visible;
+  bottom: 0;
+}
+.card__icons {
+  display: flex;
+  height: 80px;
+  align-items: flex-end;
+}
+
+.card__icons__button {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  color: #444444;
+  transition: transform 0.2s ease-in;
+  cursor: pointer;
+}
+.card__icons__button:hover {
+  transform: translateY(-4px);
+}
+
+.relative {
+  position: relative;
+}
